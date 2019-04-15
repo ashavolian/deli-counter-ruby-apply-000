@@ -3,14 +3,22 @@ def line(katz_deli)
     puts "The line is currently empty."
   else
     currentLine = []
-    katz_deli.each {|name| currentLine << " #{katz_deli.index(name) + 1}. #{name}"}
-    puts "The line is currently:#{currentLine.join}"
+    katz_deli.each do |name| 
+    currentLine << " #{katz_deli.index(name) + 1}. #{name} "
+    end
+   puts "The line is currently:#{currentLine.join}"
   end
 end
 
-def take_a_number(katz_deli, name)
-  katz_deli << name
-  puts "Welcome, #{name}. You are number #{katz_deli.length} in line."
+#def take_a_number(katz_deli, name)
+ # katz_deli << name
+ # puts "Welcome, #{name}. You are number #{katz_deli.length} in line."
+#end
+$ticketCounter = 0
+def take_a_number(katz_deli)
+  $ticketCounter += 1
+  katz_deli << $ticketCounter
+  puts "Welcome, you are ticket number #{$ticketCounter}"
 end
 
 def now_serving(katz_deli)
